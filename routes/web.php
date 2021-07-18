@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -20,13 +21,8 @@ Route::get('/details/{slug}', [FrontendController::class, 'details'])->name('det
 Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
 Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-Route::middleware(['auth:sanctum', 'verified'])->name('dashboard')->prefix('dashboard')->group(function () {
-    Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
+    Route::get('/',[DashboardController::class, 'index'])->name('index');
 
     Route::middleware(['admin'])->group(function (){
 
