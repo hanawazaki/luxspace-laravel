@@ -18,11 +18,9 @@
                 }, {
                     data: 'name',
                     name: 'name',
-                    width: '5%'
                 }, {
                     data: 'price',
                     name: 'price',
-                    width: '5%'
                 }, {
                     data: 'action',
                     name: 'action',
@@ -39,7 +37,8 @@
             <div class="mb-10">
                 <a href="{{ route('dashboard.product.create') }}"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                    + Create Product</a>
+                    + Create Product
+                </a>
             </div>
             <div class="shadow overflow-hidden sm-rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
@@ -52,9 +51,7 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
-
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
